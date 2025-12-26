@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Computer Science Student</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #hero {
+      text-align: center;
+      color: white;
+      padding-top: 8rem;
+      animation: fadeIn 2s ease-in;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .skill {
+      background: rgba(255,255,255,0.2);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s;
+    }
+    .skill.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hobby-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .hobby-list li {
+      background: rgba(255,255,255,0.2);
+      padding: 1.5rem;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    }
+    button {
+      background: #ffd700;
+      color: #333;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+      margin-top: 1rem;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      nav ul { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h1>Hi, I'm OMOTOSO EMMAUEL🙂</h1>
+    <h4>Matric number: BU23CSC1013</h4>
+    <p>A passionate Computer Science student from Oyo, Nigeria, building the future in my Tech journey specifically in DATA Analysis.</p>
+    <button onclick="scrollToSection('about')">Learn More</button>
+  </section>
+
+  <section id="about" style="background: rgba(255,255,255,0.1); color: white; border-radius: 20px; margin: 2rem auto;">
+    <h2>About Me</h2>
+    <p>I'm a dedicated Computer Science student based in Minna, Niger-State, Nigeria, diving deep into programming fundamentals(in PHP,Python and My-SQL), data structures, and Data Analysis &Science. From group projects on data structures to creating educational notes and presentations, I thrive on collaborative learning and practical Implementaion. Currently learning skills in Java, HTML/CSS/JS from my SEN 313 class, and exploring cybersecurity and networking amongst other feilds.</p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill" data-skill="Java">Data analysis</div>
+      <div class="skill" data-skill="Web Dev">HTML, CSS, JavaScript</div>
+      <div class="skill" data-skill="Data Structures">Data Structures</div>
+      <div class="skill" data-skill="Cybersecurity">Cybersecurity Basics</div>
+      <div class="skill" data-skill="Networking">Network Protocols</div>
+      <div class="skill" data-skill="Tools">VS Code, Git-hub</div>
+    </div>
+  </section>
+
+  <section id="hobbies" style="color: white;">
+    <h2>Hobbies & Interests</h2>
+    <ul class="hobby-list">
+      <li>Making research and Analysing Data.</li>
+      <li>Building web pages and experimenting with JavaScript interactions.</li>
+      <li>Group study sessions on data structures and programming challenges.</li>
+      <li>Playing foot ball and video games.</li>
+      <li>board games, and puzzles to balance coding marathons.</li>
+    </ul>
+  </section>
+
+  <section id="contact" style="text-align: center; color: white;">
+    <h2>Get in Touch👌</h2>
+    <p>Let's connect on coding projects or collaborations! Based in Minna, NG.</p>
+    <button onclick="window.location.href='mailto:your.omotosoe210@gmail.com?subject=Hi from your portfolio!'">Send Email</button>
+  </section>
+
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Skills animation on scroll
+    function animateSkills() {
+      const skills = document.querySelectorAll('.skill');
+      skills.forEach(skill => {
+        const rect = skill.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          skill.classList.add('animate');
+        }
+      });
+    }
+    window.addEventListener('scroll', animateSkills);
+    animateSkills(); // Initial check
+
+    // Scroll helper function
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
